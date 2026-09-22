@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagrama de Clases - Telcel</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.diagrama {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Cada clase */
+.clase {
+    background: white;
+    border: 2px solid #222;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Nombre de la clase */
+.nombre {
+    background: #e5e5e5;
+    border-bottom: 2px solid #222;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Atributos */
+.atributos {
+    padding: 10px;
+    border-bottom: 1px solid #777;
+    min-height: 90px;
+}
+
+/* Métodos */
+.metodos {
+    padding: 10px;
+    min-height: 70px;
+}
+
+p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Diagrama de Clases - Sistema Telcel</h1>
+
+<div class="diagrama">
+
+<!-- 1 -->
+<div class="clase">
+    <div class="nombre">Cliente</div>
+    <div class="atributos">
+        <p>- idCliente</p>
+        <p>- nombre</p>
+        <p>- telefono</p>
+    </div>
+    <div class="metodos">
+        <p>+ registrar()</p>
+        <p>+ actualizarDatos()</p>
+    </div>
+</div>
+
+<!-- 2 -->
+<div class="clase">
+    <div class="nombre">Cuenta</div>
+    <div class="atributos">
+        <p>- idCuenta</p>
+        <p>- correo</p>
+        <p>- contraseña</p>
+    </div>
+    <div class="metodos">
+        <p>+ iniciarSesion()</p>
+        <p>+ cerrarSesion()</p>
+    </div>
+</div>
+
+<!-- 3 -->
+<div class="clase">
+    <div class="nombre">LineaTelcel</div>
+    <div class="atributos">
+        <p>- numero</p>
+        <p>- tipo</p>
+        <p>- estado</p>
+    </div>
+    <div class="metodos">
+        <p>+ activar()</p>
+        <p>+ suspender()</p>
+    </div>
+</div>
+
+<!-- 4 -->
+<div class="clase">
+    <div class="nombre">Plan</div>
+    <div class="atributos">
+        <p>- idPlan</p>
+        <p>- nombre</p>
+        <p>- precio</p>
+    </div>
+    <div class="metodos">
+        <p>+ contratar()</p>
+        <p>+ cancelar()</p>
+    </div>
+</div>
+
+<!-- 5 -->
+<div class="clase">
+    <div class="nombre">Recarga</div>
+    <div class="atributos">
+        <p>- idRecarga</p>
+        <p>- monto</p>
+        <p>- fecha</p>
+    </div>
+    <div class="metodos">
+        <p>+ realizar()</p>
+        <p>+ consultar()</p>
+    </div>
+</div>
+
+<!-- 6 -->
+<div class="clase">
+    <div class="nombre">Pago</div>
+    <div class="atributos">
+        <p>- idPago</p>
+        <p>- monto</p>
+        <p>- fecha</p>
+    </div>
+    <div class="metodos">
+        <p>+ procesar()</p>
+        <p>+ cancelar()</p>
+    </div>
+</div>
+
+<!-- 7 -->
+<div class="clase">
+    <div class="nombre">Factura</div>
+    <div class="atributos">
+        <p>- idFactura</p>
+        <p>- fecha</p>
+        <p>- total</p>
+    </div>
+    <div class="metodos">
+        <p>+ generar()</p>
+        <p>+ consultar()</p>
+    </div>
+</div>
+
+<!-- 8 -->
+<div class="clase">
+    <div class="nombre">Consumo</div>
+    <div class="atributos">
+        <p>- idConsumo</p>
+        <p>- datos</p>
+        <p>- minutos</p>
+    </div>
+    <div class="metodos">
+        <p>+ consultar()</p>
+        <p>+ calcular()</p>
+    </div>
+</div>
+
+<!-- 9 -->
+<div class="clase">
+    <div class="nombre">Promocion</div>
+    <div class="atributos">
+        <p>- idPromocion</p>
+        <p>- nombre</p>
+        <p>- descuento</p>
+    </div>
+    <div class="metodos">
+        <p>+ aplicar()</p>
+        <p>+ consultar()</p>
+    </div>
+</div>
+
+<!-- 10 -->
+<div class="clase">
+    <div class="nombre">Paquete</div>
+    <div class="atributos">
+        <p>- idPaquete</p>
+        <p>- nombre</p>
+        <p>- precio</p>
+    </div>
+    <div class="metodos">
+        <p>+ contratar()</p>
+        <p>+ cancelar()</p>
+    </div>
+</div>
+
+<!-- 11 -->
+<div class="clase">
+    <div class="nombre">Servicio</div>
+    <div class="atributos">
+        <p>- idServicio</p>
+        <p>- nombre</p>
+        <p>- descripcion</p>
+    </div>
+    <div class="metodos">
+        <p>+ activar()</p>
+        <p>+ desactivar()</p>
+    </div>
+</div>
+
+<!-- 12 -->
+<div class="clase">
+    <div class="nombre">Equipo</div>
+    <div class="atributos">
+        <p>- idEquipo</p>
+        <p>- modelo</p>
+        <p>- precio</p>
+    </div>
+    <div class="metodos">
+        <p>+ comprar()</p>
+        <p>+ consultar()</p>
+    </div>
+</div>
+
+<!-- 13 -->
+<div class="clase">
+    <div class="nombre">SIM</div>
+    <div class="atributos">
+        <p>- idSim</p>
+        <p>- numeroSerie</p>
+        <p>- estado</p>
+    </div>
+    <div class="metodos">
+        <p>+ activar()</p>
+        <p>+ bloquear()</p>
+    </div>
+</div>
+
+<!-- 14 -->
+<div class="clase">
+    <div class="nombre">Tienda</div>
+    <div class="atributos">
+        <p>- idTienda</p>
+        <p>- nombre</p>
+        <p>- direccion</p>
+    </div>
+    <div class="metodos">
+        <p>+ registrarVenta()</p>
+        <p>+ consultarInventario()</p>
+    </div>
+</div>
+
+<!-- 15 -->
+<div class="clase">
+    <div class="nombre">Empleado</div>
+    <div class="atributos">
+        <p>- idEmpleado</p>
+        <p>- nombre</p>
+        <p>- puesto</p>
+    </div>
+    <div class="metodos">
+        <p>+ registrarCliente()</p>
+        <p>+ atenderCliente()</p>
+    </div>
+</div>
+
+<!-- 16 -->
+<div class="clase">
+    <div class="nombre">Soporte</div>
+    <div class="atributos">
+        <p>- idSoporte</p>
+        <p>- tipo</p>
+        <p>- descripcion</p>
+    </div>
+    <div class="metodos">
+        <p>+ solicitar()</p>
+        <p>+ atender()</p>
+    </div>
+</div>
+
+<!-- 17 -->
+<div class="clase">
+    <div class="nombre">Ticket</div>
+    <div class="atributos">
+        <p>- idTicket</p>
+        <p>- fecha</p>
+        <p>- estado</p>
+    </div>
+    <div class="metodos">
+        <p>+ crear()</p>
+        <p>+ cerrar()</p>
+    </div>
+</div>
+
+<!-- 18 -->
+<div class="clase">
+    <div class="nombre">Notificacion</div>
+    <div class="atributos">
+        <p>- idNotificacion</p>
+        <p>- mensaje</p>
+        <p>- fecha</p>
+    </div>
+    <div class="metodos">
+        <p>+ enviar()</p>
+        <p>+ marcarLeida()</p>
+    </div>
+</div>
+
+<!-- 19 -->
+<div class="clase">
+    <div class="nombre">MetodoPago</div>
+    <div class="atributos">
+        <p>- idMetodo</p>
+        <p>- tipo</p>
+        <p>- numero</p>
+    </div>
+    <div class="metodos">
+        <p>+ registrar()</p>
+        <p>+ eliminar()</p>
+    </div>
+</div>
+
+<!-- 20 -->
+<div class="clase">
+    <div class="nombre">Historial</div>
+    <div class="atributos">
+        <p>- idHistorial</p>
+        <p>- fecha</p>
+        <p>- movimiento</p>
+    </div>
+    <div class="metodos">
+        <p>+ registrar()</p>
+        <p>+ consultar()</p>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
